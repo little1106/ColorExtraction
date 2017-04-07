@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Color Extraction Effect with Vibrant.js</title>
+		<meta name="description" content="Creating a color palette from images in a fun way using Vibrant.js" />
+		<meta name="keywords" content="color palette, effect, animation, vibrant.js, extract color, image, web design" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<!--上传图片-->
+		<link rel="stylesheet" href="css/upload.css" type="text/css">
+		<script type="text/javascript" src="js/uploadImg.js"></script>
+
+  		<script src="js/modernizr.custom.js"></script>
+	</head>
+	<body>
+		<svg viewBox="0 0 640 360" class="hidden">
+			<filter id="grayscale">
+				<feColorMatrix type="saturate" values="0"/>
+			</filter>
+		</svg>
+		<div class="container">
+			<header class="codrops-header">
+			</header>
+			<div class="content">
+				<div id="slider" class="slider">
+					<!-- 上传图片-->
+					<div id="preview" class="slider__item slider__item--current">
+						<img id="imghead" class="slider__img" src="img/default.png" alt="img01"/>
+					</div>
+					
+					<nav class="slider__nav-wrap">
+						<button class="slider__nav slider__nav--prev"><i class="fa fa-angle-left"></i><span class="text-hidden">Previous</span></button>
+						<button class="slider__nav slider__nav--next"><i class="fa fa-angle-right"></i><span class="text-hidden">Next</span></button>
+					</nav>
+				</div><!-- /slider -->
+				<div class="tools">
+					<label id="fileName" for="fileload"><i class="fa fa-eyedropper"></i><span><br>Upload</span></label>
+					<input id="fileload" type="file" class="fa fa-eyedropper" value="Upload" onchange="previewImage(this)"/>
+					<button class="button-color"><i class="fa fa-eyedropper"></i><span >Extract</span></button>
+					<ul class="palette">
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+
+						</li>
+						<li class="palette__item">
+							<div class="palette__inner">
+								<div class="palette__fill"></div>
+								<i class="icon fa fa-tint"></i>
+								<div class="palette__name">
+									<span class="palette__value palette__value--default">#######</span>
+									<span class="palette__value palette__value--real">#######</span>
+								</div>
+							</div>
+
+						</li>
+
+					</ul>
+			</div>
+		</div>
+
+					<!--饼状图-->
+<div id="svgTable"></div>
+<table id="pieChart">
+	<tbody>
+		<tr>
+			<th scope="row" id="1"></th>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row"></th>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row"></th>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row"></th>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row"></th>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+<!-- 对比色表格-->
+<table border="3" id="colorChart">
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+	<tr>
+		<th></th>
+		<th></th>
+	</tr>
+</table>
+
+<div id="holder" ></div>
+
+
+		</div><!-- /container -->
+		<script src="js/jquery-3.1.1.js"></script>
+		<script type="text/javascript" src="js/raphael.min.js"></script>
+		<script src="js/Vibrant.min.js"></script>		
+		<script src="js/classie.js"></script>
+		<script src="js/Animate.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/Table.js"></script>
+
+
+
+		
+	</body>
+</html>
